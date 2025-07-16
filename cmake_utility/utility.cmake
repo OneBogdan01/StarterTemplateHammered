@@ -67,9 +67,16 @@ function(add_game_backends backends)
         configure_assets_for(${target})
 
         list(APPEND game_exes ${target})
+
     endforeach()
 
-
+    # Compiler flags
+    if(MSVC)
+        set(CMAKE_CXX_FLAGS "/W4 /WX /EHsc")          # common flags for all configs
+        set(CMAKE_CXX_FLAGS_DEBUG "/Zi /MTd /Od /Ob0 /DDEBUG")
+        set(CMAKE_CXX_FLAGS_RELWITHDEBINFO "/O2 /Zi /DDEVELOP /MT")
+        set(CMAKE_CXX_FLAGS_RELEASE "/O2 /DNDEBUG /MT")
+    endif()
     add_custom_target(build_all_backends ALL
         DEPENDS ${game_exes}
     )

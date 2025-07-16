@@ -7,6 +7,7 @@ include(cmake_utility/utility.cmake)
 
 project(hammered_template VERSION ${HM_VERSION})
 
+
 # Backend selection
 set(GAME_BACKENDS "")
 

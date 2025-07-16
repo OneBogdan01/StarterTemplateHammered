@@ -9,28 +9,7 @@
       "architecture": "x64",
       "cacheVariables": {
         "CMAKE_CONFIGURATION_TYPES": "Debug",
-        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
-        "CMAKE_CXX_FLAGS_DEBUG": "/Zi /MTd /Od /Ob0 /DDEBUG",
-        "CMAKE_CXX_FLAGS": "/W4 /WX /EHsc"
-      }
-    },
-    {
-      "name": "base",
-      "hidden": true,
-      "generator": "Ninja",
-      "binaryDir": "${sourceDir}/build/${presetName}",
-      "installDir": "${sourceDir}/build/${presetName}/install",
-      "cacheVariables": {
-        "CMAKE_EXPORT_COMPILE_COMMANDS": "YES",
-        "CMAKE_INSTALL_PREFIX": "${sourceDir}/build/${presetName}/install"
-      }
-    },
-    {
-      "name": "debug",
-      "inherits": "base",
-      "description": "Build with debug information",
-      "cacheVariables": {
-        "CMAKE_BUILD_TYPE": "Debug"
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
       }
     },
     {
@@ -41,9 +20,7 @@
       "architecture": "x64",
       "cacheVariables": {
         "CMAKE_CONFIGURATION_TYPES": "RelWithDebInfo",
-        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
-        "CMAKE_CXX_FLAGS_RELWITHDEBINFO": "/O2 /Zi /MT /DDEVELOP",
-        "CMAKE_CXX_FLAGS": "/W4 /WX /EHsc"
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
       }
     },
     {
@@ -54,9 +31,7 @@
       "architecture": "x64",
       "cacheVariables": {
         "CMAKE_CONFIGURATION_TYPES": "Release",
-        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
-        "CMAKE_CXX_FLAGS_RELEASE": "/O2 /MT /DNDEBUG",
-        "CMAKE_CXX_FLAGS": "/W4 /WX /EHsc"
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
       }
     },
     {
@@ -101,10 +76,6 @@
     }
   ],
   "buildPresets": [
-    {
-      "name": "debug",
-      "configurePreset": "debug"
-    },
     {
       "name": "windows-msvc-debug",
       "configurePreset": "windows-msvc-debug"
